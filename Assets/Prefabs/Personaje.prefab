@@ -133,8 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699cfd851af48b44684c41ee987b9e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  mousePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3563488760798639359
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +144,7 @@ GameObject:
   - component: {fileID: 6230927645835692836}
   m_Layer: 0
   m_Name: Personaje
-  m_TagString: Untagged
+  m_TagString: Personaje
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
