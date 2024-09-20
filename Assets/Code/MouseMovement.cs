@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
-{    
-
+{
+    public float rapidez = 20;
     // Use this for initialization1
     void Start()
     {
@@ -17,7 +17,7 @@ public class MouseMovement : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
-        //transform.position = Vector2.MoveTowards(transform.position, mousePosition, speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, mousePosition, rapidez * Time.deltaTime);
         transform.position = mousePosition;
     }
 

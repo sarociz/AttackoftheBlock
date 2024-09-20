@@ -16,15 +16,16 @@ public class Obstacle : MonoBehaviour
         rbObstaculo.AddForce(velocidad.normalized * rapidez);
     }
 
+    //Al chocar el personaje con un obsáculo = "game over"
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("Personaje"))
         {
-            SceneManager.LoadScene("GameOver");
-            //Application.Quit();
+            SceneManager.LoadScene("GameOver");            
         }
         velocityFix();
     }
 
+    //Funcion para arreglar la velocidad y la direccion del rebote del obstáculo.
     private void velocityFix()
     {
         float velocityDelta = 0.5f;
