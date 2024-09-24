@@ -7,20 +7,16 @@ using UnityEngine.UI;
 
 public class GameStart : MonoBehaviour
 {
-
+    //timer de tres segundos para que el juego no empiece de repente.
     public float timer = 3.0f;
-     public TextMeshProUGUI startText;
+    public TextMeshProUGUI startText;
 
 
-    void Start()
-    {
-       
-    }
-    // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;
         startText.text = (timer).ToString("0");
+        //cuando el timer llega a 0 empieza el juego
         if (timer < 0)
         {
             SceneManager.LoadScene("Game");

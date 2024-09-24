@@ -25,22 +25,22 @@ public class Obstacle : MonoBehaviour
         velocityFix();
     }
 
-    //Funcion para arreglar la velocidad y la direccion del rebote del obstáculo.
+    //Funcion para arreglar la velocidad del rebote del obstáculo.
     private void velocityFix()
     {
-        float velocityDelta = 0.5f;
+        float velocity = 0.5f;
         float minVelocity = 0.2f;
 
         if (Mathf.Abs(rbObstaculo.velocity.x) < minVelocity)
         {
-            velocityDelta = Random.value < 0.5f ? velocityDelta : -velocityDelta;
-            rbObstaculo.velocity += new Vector2(velocityDelta, 0f);
+            velocity = Random.value < 0.5f ? velocity : -velocity;
+            rbObstaculo.velocity += new Vector2(velocity, 0f);
         }
 
         if (Mathf.Abs(rbObstaculo.velocity.y) < minVelocity)
         {
-            velocityDelta = Random.value < 0.5f ? velocityDelta : -velocityDelta;
-            rbObstaculo.velocity += new Vector2(velocityDelta, 0f);
+            velocity = Random.value < 0.5f ? velocity : -velocity;
+            rbObstaculo.velocity += new Vector2(velocity, 0f);
         }
     }
 }

@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
-    public float rapidez = 20;
-    // Use this for initialization1
-    void Start()
-    {
-       
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
-        //transform.position = Vector2.MoveTowards(transform.position, mousePosition, rapidez * Time.deltaTime);
+        //Sprite del jugador sigue la posición del ratón constantemente
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);        
         transform.position = mousePosition;
     }
 
