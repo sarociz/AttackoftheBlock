@@ -144,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676551488185681346, guid: 21d5839e3f9594e418b87f2ee467107e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.66
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 2676551488185681346, guid: 21d5839e3f9594e418b87f2ee467107e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.88
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 5090935382583111398, guid: 21d5839e3f9594e418b87f2ee467107e, type: 3}
       propertyPath: m_Name
@@ -336,11 +336,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676551488185681346, guid: 21d5839e3f9594e418b87f2ee467107e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.99
+      value: 7.87
       objectReference: {fileID: 0}
     - target: {fileID: 2676551488185681346, guid: 21d5839e3f9594e418b87f2ee467107e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.47
+      value: 3.91
       objectReference: {fileID: 0}
     - target: {fileID: 5090935382583111398, guid: 21d5839e3f9594e418b87f2ee467107e, type: 3}
       propertyPath: m_Name
@@ -618,7 +618,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -707,20 +707,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 704505509216758931, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08716901
+      objectReference: {fileID: 0}
+    - target: {fileID: 704505509216758931, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.084756
+      objectReference: {fileID: 0}
+    - target: {fileID: 704505509216758931, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 704505509216758931, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 704505509216758931, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 991256791079970012, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_Color.b
-      value: 0.91823894
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 991256791079970012, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_Color.g
-      value: 0.25699133
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 991256791079970012, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_Color.r
-      value: 0.55807084
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880124724148831621, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_TagString
