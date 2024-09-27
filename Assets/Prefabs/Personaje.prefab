@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 704505509216758931}
   - component: {fileID: 991256791079970012}
-  - component: {fileID: 5164387369932072523}
   - component: {fileID: 7238257696274344989}
+  - component: {fileID: 2674023656763330567}
   m_Layer: 0
   m_Name: Diver
   m_TagString: Untagged
@@ -86,8 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5164387369932072523
-CircleCollider2D:
+--- !u!114 &7238257696274344989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880124724148831621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699cfd851af48b44684c41ee987b9e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+--- !u!60 &2674023656763330567
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,20 +132,49 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &7238257696274344989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880124724148831621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699cfd851af48b44684c41ee987b9e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 0.64}
+    newSize: {x: 4.67, y: 2.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42, y: -0.07}
+      - {x: 0.55, y: -0.03}
+      - {x: 0.65, y: -0.14999999}
+      - {x: 0.7, y: -0.16}
+      - {x: 0.7, y: -0.099999994}
+      - {x: 0.65, y: -0.03}
+      - {x: 0.62, y: 0.12}
+      - {x: 0.38, y: 0.07}
+      - {x: 0.21, y: 0.11}
+      - {x: 0.12, y: 0.099999994}
+      - {x: 0.07, y: 0.25}
+      - {x: -0.21, y: 0.32}
+      - {x: -0.45999998, y: 0.32}
+      - {x: -0.48, y: 0.29999998}
+      - {x: -0.56, y: 0.19999999}
+      - {x: -0.68, y: 0.21}
+      - {x: -0.7, y: 0.17}
+      - {x: -0.7, y: 0.13}
+      - {x: -0.65, y: 0.04}
+      - {x: -0.58, y: 0}
+      - {x: -0.31, y: -0.02}
+      - {x: -0.13, y: -0.03}
+      - {x: -0.04, y: -0.03}
+      - {x: 0.13, y: -0.21}
+      - {x: 0.26, y: -0.22}
+      - {x: 0.39999998, y: -0.19}
+      - {x: 0.51, y: -0.32}
+      - {x: 0.59999996, y: -0.32}
+      - {x: 0.59999996, y: -0.29}
+      - {x: 0.51, y: -0.21}
+      - {x: 0.48999998, y: -0.089999996}
+  m_UseDelaunayMesh: 0
 --- !u!1 &3563488760798639359
 GameObject:
   m_ObjectHideFlags: 0
