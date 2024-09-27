@@ -15,8 +15,7 @@ public class MouseMovement : MonoBehaviour
     {
         //Sprite del jugador sigue la posición del ratón constantemente
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);        
-        //transform.position = mousePosition;
-
+        
         rb.MovePosition(mousePosition);
     }
 
