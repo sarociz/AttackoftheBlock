@@ -32,8 +32,7 @@ public class GameStart : MonoBehaviour
         
         // Mover la imagen de un lado a otro
         if (movingRight)
-        {
-           
+        {          
 
             imageRectTransform.anchoredPosition += Vector2.right * speed * Time.deltaTime;
             imageRectTransform.rotation = Quaternion.Euler(0, 0, 0);
