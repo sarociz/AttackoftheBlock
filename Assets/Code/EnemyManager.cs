@@ -11,6 +11,8 @@ public class EnemyManager : MonoBehaviour
     private GameManager GameManager;
 
 
+
+
     private void Start()
     {
         rbObstaculo.velocity = Vector2.zero;
@@ -18,36 +20,43 @@ public class EnemyManager : MonoBehaviour
         velocidad.y = -1;
         rbObstaculo.AddForce(velocidad.normalized * rapidez);
         GameManager = FindAnyObjectByType<GameManager>();
-    }
-   
 
-    
+    }
+
+
+
 
     //Al chocar el personaje con un obsáculo = "game over"
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (!GameManager.invincible)
+    //    {
+    //        if (collision.gameObject.CompareTag("Personaje"))
+    //        {
+    //            GameManager.perderVida();                
+    //            GameManager.invincible = true;
+
+    //        
+    //        }
+    //    }
+
+    //    velocityFix();
+    //}
+
+    void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (!GameManager.invincible)
         {
+
             if (collision.gameObject.CompareTag("Personaje"))
             {
-                FindAnyObjectByType<GameManager>().perderVida();
-                Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+                GameManager.perderVida();
                 GameManager.invincible = true;
             }
         }
 
         velocityFix();
     }
-
-    //void OnTriggerEnter2D(UnityEngine.Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Personaje"))
-    //    {
-    //        FindAnyObjectByType<GameManager>().perderVida();
-    //    }
-
-    //    velocityFix();
-    //}
 
     //Funcion para arreglar la velocidad del rebote del obstáculo.
     private void velocityFix()

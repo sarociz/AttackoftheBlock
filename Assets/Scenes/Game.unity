@@ -246,6 +246,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!212 &886122916 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 991256791079970012, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
+  m_PrefabInstance: {fileID: 1392982639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &928510005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,6 +407,9 @@ MonoBehaviour:
   - {fileID: 1230409218}
   - {fileID: 1230409217}
   - {fileID: 1230409216}
+  time: 0
+  invincible: 0
+  playerSprite: {fileID: 886122916}
 --- !u!1 &1210239009
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,12 +522,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1020999459}
     m_Modifications:
     - target: {fileID: 400510421440638811, guid: a97d483a342152745b62c786f78db334, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400510421440638811, guid: a97d483a342152745b62c786f78db334, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400510421440638811, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -867
+      value: -894.2
       objectReference: {fileID: 0}
     - target: {fileID: 400510421440638811, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 488
+      value: 480.7
       objectReference: {fileID: 0}
     - target: {fileID: 2546377646280938779, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_Name
@@ -566,20 +582,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8369136027877553975, guid: a97d483a342152745b62c786f78db334, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369136027877553975, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -656.4
+      value: -689.4
       objectReference: {fileID: 0}
     - target: {fileID: 8369136027877553975, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 488
+      value: 481.2
       objectReference: {fileID: 0}
     - target: {fileID: 9035975177474827123, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -762.5
+      value: -791.4
       objectReference: {fileID: 0}
     - target: {fileID: 9035975177474827123, guid: a97d483a342152745b62c786f78db334, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 487.99997
+      value: 481.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -794,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674023656763330567, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3563488760798639359, guid: 4359118d26091d64bbea22e574adf14d, type: 3}
       propertyPath: m_Name
