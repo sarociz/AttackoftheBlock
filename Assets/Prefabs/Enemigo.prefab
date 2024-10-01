@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 9222415691691339599}
   - component: {fileID: 1403645321192528221}
   - component: {fileID: 8648895526090626885}
+  - component: {fileID: 537615257145267543}
+  - component: {fileID: 6874258111240047180}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Untagged
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 926790245090557663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8507, y: -1.748, z: 0}
+  m_LocalPosition: {x: -2.744, y: -1.917, z: 0}
   m_LocalScale: {x: 0.32940406, y: 0.2967818, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -135,7 +137,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926790245090557663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -333,6 +335,115 @@ PolygonCollider2D:
       - {x: 0.205, y: -2.45}
       - {x: 0.185, y: -2.3899999}
   m_UseDelaunayMesh: 0
+--- !u!68 &537615257145267543
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926790245090557663}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.6084144, y: -0.08311303}
+  - {x: -3.503915, y: -0.4635532}
+  - {x: -2.8600154, y: -1.6379974}
+  - {x: -2.0340652, y: -2.1838405}
+  - {x: -1.3321128, y: -2.3407083}
+  - {x: -0.54640657, y: -2.2572296}
+  - {x: 0.5648833, y: -1.9265481}
+  - {x: 0.68924236, y: -1.858724}
+  - {x: 0.72783685, y: -1.8408753}
+  - {x: 0.7912963, y: -1.8093946}
+  - {x: 1.4883502, y: -1.2565123}
+  - {x: 1.9596068, y: -1.787431}
+  - {x: 2.4365706, y: -2.085823}
+  - {x: 2.4901578, y: -2.1028976}
+  - {x: 3.4485705, y: -2.2138743}
+  - {x: 3.4640677, y: -0.5921963}
+  - {x: 3.595407, y: 0.9235121}
+  - {x: 2.5244536, y: 0.44672856}
+  - {x: 1.7034227, y: -0.33200693}
+  - {x: 0.3221952, y: 0.93959355}
+  - {x: -1.452226, y: 1.278339}
+  - {x: -2.6852968, y: 0.7426532}
+  - {x: -3.0852358, y: 0.37092748}
+  - {x: -3.6146808, y: 0.3339042}
+  - {x: -3.6085596, y: -0.08740434}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!61 &6874258111240047180
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926790245090557663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0043063164, y: -0.78738254}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.25, y: 5.3}
+    newSize: {x: 7.25, y: 5.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.2586126, y: 3.725235}
+  m_EdgeRadius: 0
 --- !u!1 &5090935382583111398
 GameObject:
   m_ObjectHideFlags: 0
