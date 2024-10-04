@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject powerUpPrefab;
+    public Vector2 minSpawnPosition; // Límite inferior de la posición aleatoria
+    public Vector2 maxSpawnPosition; // Límite superior de la posición aleatoria
+    private bool powerUpActive = false;
+
+    private void Start()
     {
-        
+        DeactivatePowerUp();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Método para activar el Power-up
+    public void ActivatePowerUp()
     {
-        
+        powerUpPrefab.SetActive(true); // Activa el Power-up
+        powerUpActive = true; // Marca el Power-up como activo
+    }
+
+    // Método para desactivar el Power-up
+    private void DeactivatePowerUp()
+    {
+        powerUpPrefab.SetActive(false); // Desactiva el Power-up
+        powerUpActive = false; // Marca el Power-up como inactivo
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Personaje"))
+        {
+            // Lógica para lo que hace el Power-up al ser recogido
+            DeactivatePowerUp(); // Desactiva el Power-up al ser recogido
+            Destroy(gameObject); // Destruye el Power-up
+        }
     }
 }

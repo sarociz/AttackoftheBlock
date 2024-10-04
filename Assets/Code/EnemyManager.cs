@@ -63,17 +63,35 @@ public class EnemyManager : MonoBehaviour
     {
         float velocity = 0.5f;
         float minVelocity = 0.2f;
+        float maxVelocity = 5f;  // Velocidad máxima
 
+        //if (Mathf.Abs(rbObstaculo.velocity.x) < minVelocity)
+        //{
+        //    velocity = Random.value < 0.5f ? velocity : -velocity;
+        //    rbObstaculo.velocity += new Vector2(velocity, 0f);
+        //}
+
+        //if (Mathf.Abs(rbObstaculo.velocity.y) < minVelocity)
+        //{
+        //    velocity = Random.value < 0.5f ? velocity : -velocity;
+        //    rbObstaculo.velocity += new Vector2(velocity, 0f);
+        //}
+
+        // Ajuste de la velocidad en el eje X
         if (Mathf.Abs(rbObstaculo.velocity.x) < minVelocity)
         {
             velocity = Random.value < 0.5f ? velocity : -velocity;
             rbObstaculo.velocity += new Vector2(velocity, 0f);
         }
 
+        // Ajuste de la velocidad en el eje Y
         if (Mathf.Abs(rbObstaculo.velocity.y) < minVelocity)
         {
             velocity = Random.value < 0.5f ? velocity : -velocity;
             rbObstaculo.velocity += new Vector2(velocity, 0f);
         }
+
+        // Limitar la velocidad máxima
+        rbObstaculo.velocity = Vector2.ClampMagnitude(rbObstaculo.velocity, maxVelocity);
     }
 }
