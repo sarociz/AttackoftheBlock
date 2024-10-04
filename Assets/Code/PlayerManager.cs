@@ -7,6 +7,15 @@ public class PlayerManager : MonoBehaviour
     public Rigidbody2D rb;
     private GameManager GameManager;
 
+    public AudioSource auSource;
+
+    public AudioClip powerupAudio;
+
+    public float scaleFactor = 0.5f; // Factor de escala (0.5 para hacerlo más pequeño)
+
+    private Vector3 originalScale;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +35,7 @@ public class PlayerManager : MonoBehaviour
         Vector2 clampedPosition = ClampPositionToCameraBounds(mousePosition);
 
         rb.MovePosition(clampedPosition);
-        GameManager.TimeInvulnerable();
+        
     }
 
     // Función para clavar la posición dentro de los límites de la cámara
@@ -47,8 +56,31 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PowerUp"))
         {
-            GameManager.TimeInvulnerable();
-            Destroy(other.gameObject); // Destruye el Power-up
+            auSource.clip = powerupAudio;
+            auSource.Play();          
+           
+
+            // Guardar la escala original
+            originalScale = transform.localScale;
+
+            // Hacer el sprite más pequeño
+            transform.localScale = originalScale * scaleFactor;
+
+            // Destruir el PowerUp
+            Destroy(other.gameObject);
+
+            // Iniciar la corrutina para volver a la escala original después de 5 segundos
+            StartCoroutine(ResetScaleAfterTime(5f));
         }
     }
+
+
+    // Corrutina que espera 5 segundos y luego vuelve a la escala original
+    private IEnumerator ResetScaleAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        transform.localScale = originalScale;
+    }
+
+
 }

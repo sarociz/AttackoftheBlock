@@ -10,6 +10,9 @@ public class EnemyManager : MonoBehaviour
     private Vector2 velocidad;
     private GameManager GameManager;
 
+    public AudioSource auSource;
+
+    public AudioClip enemyAudio;
 
 
 
@@ -24,25 +27,6 @@ public class EnemyManager : MonoBehaviour
     }
 
 
-
-
-    //Al chocar el personaje con un obsáculo = "game over"
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (!GameManager.invincible)
-    //    {
-    //        if (collision.gameObject.CompareTag("Personaje"))
-    //        {
-    //            GameManager.perderVida();                
-    //            GameManager.invincible = true;
-
-    //        
-    //        }
-    //    }
-
-    //    velocityFix();
-    //}
-
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (!GameManager.invincible)
@@ -50,8 +34,12 @@ public class EnemyManager : MonoBehaviour
 
             if (collision.gameObject.CompareTag("Personaje"))
             {
+                auSource.clip = enemyAudio;
+                auSource.Play();
                 GameManager.perderVida();
-                GameManager.invincible = true;
+                
+                GameManager.TimeInvulnerable();
+                
             }
         }
 
