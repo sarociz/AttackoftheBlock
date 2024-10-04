@@ -42,11 +42,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2241836117256852967, guid: 5c9b9676773e0564084e1e7793a5ab80, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4170108893197353565, guid: 5c9b9676773e0564084e1e7793a5ab80, type: 3}
       propertyPath: m_Name
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170108893197353565, guid: 5c9b9676773e0564084e1e7793a5ab80, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 5022326343363445961, guid: 5c9b9676773e0564084e1e7793a5ab80, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88,8 +92,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8058185396997347963, guid: 5c9b9676773e0564084e1e7793a5ab80, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

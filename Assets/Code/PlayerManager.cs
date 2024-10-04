@@ -41,4 +41,14 @@ public class PlayerManager : MonoBehaviour
 
         return new Vector2(clampedX, clampedY);
     }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PowerUp"))
+        {
+            GameManager.TimeInvulnerable();
+            Destroy(other.gameObject); // Destruye el Power-up
+        }
+    }
 }
