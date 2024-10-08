@@ -18,18 +18,16 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         GameManager = FindAnyObjectByType<GameManager>();
+       
     }
     // Update is called once per frame
     void Update()    {
         
-        
-       // rb.MovePosition(mousePosition);
-       
-
         // Sprite del jugador sigue la posición del ratón constantemente
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);        
 
         // Limitar la posición del jugador dentro de los límites de la cámara
         Vector2 clampedPosition = ClampPositionToCameraBounds(mousePosition);

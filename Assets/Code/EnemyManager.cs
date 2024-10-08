@@ -27,21 +27,43 @@ public class EnemyManager : MonoBehaviour
     }
 
 
+    //void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    //{
+    //    if (!GameManager.invincible)
+    //    {
+
+    //        if (collision.gameObject.CompareTag("Personaje"))
+    //        {
+    //            auSource.clip = enemyAudio;
+    //            auSource.Play();
+    //            GameManager.perderVida();
+                
+    //            GameManager.TimeInvulnerable();
+                
+    //        }
+    //    }
+
+    //    velocityFix();
+    //}
+
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
+        // Guardar la velocidad actual del Rigidbody2D
+        Vector2 velocidadActual = rbObstaculo.velocity;
+
         if (!GameManager.invincible)
         {
-
             if (collision.gameObject.CompareTag("Personaje"))
             {
                 auSource.clip = enemyAudio;
                 auSource.Play();
                 GameManager.perderVida();
-                
                 GameManager.TimeInvulnerable();
-                
             }
         }
+
+        // Restablecer la velocidad del Rigidbody2D
+        rbObstaculo.velocity = velocidadActual;
 
         velocityFix();
     }

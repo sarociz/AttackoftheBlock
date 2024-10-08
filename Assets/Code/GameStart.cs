@@ -69,9 +69,15 @@ public class GameStart : MonoBehaviour
         }
         //Cursor.visible = false;
     }
-    public void botonStart()
+    public void ButtonStart()
     {
         SceneManager.LoadScene("Game");
+        Cursor.visible = false;
+    }
+
+    public void ButtonQuit()
+    {
+        Application.Quit();
     }
 }
 

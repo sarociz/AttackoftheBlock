@@ -7,11 +7,13 @@ public class GameOver : MonoBehaviour
 {
     public void botonRestart()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene("Game");
     }
 
     public void botonPortada()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene("Portada");
     }
 

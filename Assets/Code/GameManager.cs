@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
 
         if (Hearts <= 0)
         {
+            Cursor.visible = true;
             SceneManager.LoadScene("GameOver");
+            
         }
         else
         {
