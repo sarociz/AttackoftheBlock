@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Vector2 maxSpawnPosition; // Límite superior de la posición aleatoria
 
 
+    public Timer timerScript;  // Referencia al script Timer
+
 
     public void perderVida()
     {
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
 
         if (Hearts <= 0)
         {
+            // Obtener el tiempo actual desde el Timer
+            float finalTime = timerScript.currentTime;
+
+            // Llamar a UpdateTopTimes para guardar el tiempo si es uno de los mejores
+            timerScript.UpdateTopTimes(finalTime);
+
             Cursor.visible = true;
             SceneManager.LoadScene("GameOver");
             
