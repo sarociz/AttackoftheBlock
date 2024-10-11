@@ -28,25 +28,25 @@ public class Timer : MonoBehaviour
         timer.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, Mathf.FloorToInt(milliseconds));
 
     }
-    void SaveTime(float time)
-    {
-        // Guardar el tiempo en PlayerPrefs
-        for (int i = 0; i < 5; i++)
-        {
-            if (PlayerPrefs.HasKey("TopTime" + i))
-            {
-                // Si existe un valor guardado, continuamos
-                continue;
-            }
-            else
-            {
-                // Guardamos el tiempo
-                PlayerPrefs.SetFloat("TopTime" + i, time);
-                PlayerPrefs.Save();
-                return;
-            }
-        }
-    }
+    //void SaveTime(float time)
+    //{
+    //    // Guardar el tiempo en PlayerPrefs
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        if (PlayerPrefs.HasKey("TopTime" + i))
+    //        {
+    //            // Si existe un valor guardado, continuamos
+    //            continue;
+    //        }
+    //        else
+    //        {
+    //            // Guardamos el tiempo
+    //            PlayerPrefs.SetFloat("TopTime" + i, time);
+    //            PlayerPrefs.Save();
+    //            return;
+    //        }
+    //    }
+    //}
 
     public void UpdateTopTimes(float newTime)
     {

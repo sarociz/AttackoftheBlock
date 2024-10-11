@@ -15,25 +15,36 @@ public class PlayerManager : MonoBehaviour
 
     private Vector3 originalScale;
 
+    private List<EnemyManager> enemies; // Lista para almacenar los enemigos
+    private float originalEnemySpeed = 1f; // Velocidad original de los enemigos
+    public float enemySpeedMultiplier = 2f; // Multiplicador de velocidad de los enemigos
+
 
     private void Start()
     {
 
         rb = GetComponent<Rigidbody2D>();
         GameManager = FindAnyObjectByType<GameManager>();
-       
+
+        enemies = new List<EnemyManager>(FindObjectsOfType<EnemyManager>());
+        if (enemies.Count > 0)
+        {
+            originalEnemySpeed = enemies[0].rapidez; // Suponemos que todos los enemigos tienen la misma velocidad
+        }
+
     }
     // Update is called once per frame
-    void Update()    {
-        
+    void Update()
+    {
+
         // Sprite del jugador sigue la posición del ratón constantemente
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);        
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Limitar la posición del jugador dentro de los límites de la cámara
         Vector2 clampedPosition = ClampPositionToCameraBounds(mousePosition);
 
         rb.MovePosition(clampedPosition);
-        
+
     }
 
     // Función para clavar la posición dentro de los límites de la cámara
@@ -55,8 +66,8 @@ public class PlayerManager : MonoBehaviour
         if (other.gameObject.CompareTag("PowerUp"))
         {
             auSource.clip = powerupAudio;
-            auSource.Play();          
-           
+            auSource.Play();
+
 
             // Guardar la escala original
             originalScale = transform.localScale;
@@ -70,6 +81,26 @@ public class PlayerManager : MonoBehaviour
             // Iniciar la corrutina para volver a la escala original después de 5 segundos
             StartCoroutine(ResetScaleAfterTime(5f));
         }
+        if (other.gameObject.CompareTag("PowerDown")) {         
+
+            // Destruir el Powerdown
+            Destroy(other.gameObject);
+
+            // Aumentar la velocidad de los enemigos
+            SetEnemySpeedMultiplier(enemySpeedMultiplier);
+
+            // Iniciar la corrutina para restablecer la escala y la velocidad después de 5 segundos
+            StartCoroutine(ResetEffectsAfterTime(5f));
+        }
+
+
+    }
+    private void SetEnemySpeedMultiplier(float multiplier)
+    {
+        foreach (EnemyManager enemy in enemies)
+        {
+            enemy.rbObstaculo.AddForce(enemy.velocidad.normalized * enemy.rapidez * multiplier);
+        }
     }
 
 
@@ -78,6 +109,20 @@ public class PlayerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         transform.localScale = originalScale;
+    }
+
+    private IEnumerator ResetEffectsAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Restablecer la escala original del jugador
+        transform.localScale = originalScale;
+
+        // Restablecer la velocidad original de los enemigos
+        foreach (EnemyManager enemy in enemies)
+        {
+            enemy.rapidez = originalEnemySpeed;
+        }
     }
 
 

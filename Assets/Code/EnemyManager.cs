@@ -7,7 +7,7 @@ public class EnemyManager : MonoBehaviour
 {
     public Rigidbody2D rbObstaculo;
     public float rapidez = 300;
-    private Vector2 velocidad;
+    public Vector2 velocidad;
     private GameManager GameManager;
 
     public AudioSource auSource;
@@ -27,65 +27,33 @@ public class EnemyManager : MonoBehaviour
     }
 
 
-    //void OnTriggerEnter2D(UnityEngine.Collider2D collision)
-    //{
-    //    if (!GameManager.invincible)
-    //    {
-
-    //        if (collision.gameObject.CompareTag("Personaje"))
-    //        {
-    //            auSource.clip = enemyAudio;
-    //            auSource.Play();
-    //            GameManager.perderVida();
-                
-    //            GameManager.TimeInvulnerable();
-                
-    //        }
-    //    }
-
-    //    velocityFix();
-    //}
-
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         // Guardar la velocidad actual del Rigidbody2D
         Vector2 velocidadActual = rbObstaculo.velocity;
 
-        if (!GameManager.invincible)
+        if (!GameManager.invincible && collision.gameObject.CompareTag("Personaje"))
         {
-            if (collision.gameObject.CompareTag("Personaje"))
-            {
-                auSource.clip = enemyAudio;
-                auSource.Play();
-                GameManager.perderVida();
-                GameManager.TimeInvulnerable();
-            }
+            auSource.clip = enemyAudio;
+            auSource.Play();
+            GameManager.perderVida();
+            GameManager.TimeInvulnerable();
         }
 
-        // Restablecer la velocidad del Rigidbody2D
+        // Siempre restablecer la velocidad del Rigidbody2D después de todos los cálculos
         rbObstaculo.velocity = velocidadActual;
 
         velocityFix();
     }
+
+
 
     //Funcion para arreglar la velocidad del rebote del obstáculo.
     private void velocityFix()
     {
         float velocity = 0.5f;
         float minVelocity = 0.2f;
-        float maxVelocity = 5f;  // Velocidad máxima
-
-        //if (Mathf.Abs(rbObstaculo.velocity.x) < minVelocity)
-        //{
-        //    velocity = Random.value < 0.5f ? velocity : -velocity;
-        //    rbObstaculo.velocity += new Vector2(velocity, 0f);
-        //}
-
-        //if (Mathf.Abs(rbObstaculo.velocity.y) < minVelocity)
-        //{
-        //    velocity = Random.value < 0.5f ? velocity : -velocity;
-        //    rbObstaculo.velocity += new Vector2(velocity, 0f);
-        //}
+        float maxVelocity = 5f;  // Velocidad máxima        
 
         // Ajuste de la velocidad en el eje X
         if (Mathf.Abs(rbObstaculo.velocity.x) < minVelocity)

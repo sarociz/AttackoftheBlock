@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer playerSprite;
 
     public GameObject powerUpPrefab; // El prefab del Power-up
+    public GameObject powerDownPrefab; // El prefab del Power-up
     public Vector2 minSpawnPosition; // Límite inferior de la posición aleatoria
     public Vector2 maxSpawnPosition; // Límite superior de la posición aleatoria
 
@@ -49,6 +50,10 @@ public class GameManager : MonoBehaviour
             if (Hearts == 1)
             {
                 ActivatePowerUp();
+            }
+            if (Hearts == 2)
+            {
+                ActivatePowerDown();
             }
         }
     }
@@ -97,5 +102,17 @@ public class GameManager : MonoBehaviour
         );
 
         powerUpPrefab.SetActive(true); // Activa el Power-up
+    }
+
+    // Método para activar el PowerDown
+    public void ActivatePowerDown()
+    {
+        // Generar una posición aleatoria dentro de los límites
+        Vector2 spawnPosition = new Vector2(
+            Random.Range(minSpawnPosition.x, maxSpawnPosition.x),
+            Random.Range(minSpawnPosition.y, maxSpawnPosition.y)
+        );
+
+        powerDownPrefab.SetActive(true); // Activa el Power-up
     }
 }
