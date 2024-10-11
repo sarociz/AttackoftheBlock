@@ -11,17 +11,11 @@ public class Timer : MonoBehaviour
     public float currentTime;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         // Incrementar el tiempo hacia adelante
-        currentTime += Time.deltaTime; 
+        currentTime += Time.deltaTime;
 
         // Calcular minutos y segundos
         int minutes = Mathf.FloorToInt(currentTime / 60);

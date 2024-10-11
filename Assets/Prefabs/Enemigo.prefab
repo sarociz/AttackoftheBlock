@@ -105,7 +105,7 @@ MonoBehaviour:
   rbObstaculo: {fileID: 1403645321192528221}
   rapidez: 300
   auSource: {fileID: 4892379868402242081}
-  enemyAudio: {fileID: 8300000, guid: c18357d0337ff154b8eb1c0f636cb9da, type: 3}
+  enemyAudio: {fileID: 8300000, guid: c861c1e52e086d042bca1ff0168f345f, type: 3}
 --- !u!50 &1403645321192528221
 Rigidbody2D:
   serializedVersion: 4
