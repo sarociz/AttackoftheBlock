@@ -115,9 +115,6 @@ public class PlayerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        // Restablecer la escala original del jugador
-        transform.localScale = originalScale;
-
         // Restablecer la velocidad original de los enemigos
         foreach (EnemyManager enemy in enemies)
         {
