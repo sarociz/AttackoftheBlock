@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     private List<EnemyManager> enemies; // Lista para almacenar los enemigos
     private float originalEnemySpeed = 1f; // Velocidad original de los enemigos
-    public float enemySpeedMultiplier = 2f; // Multiplicador de velocidad de los enemigos
+    public float enemySpeedMultiplier = 4f; // Multiplicador de velocidad de los enemigos
 
 
     private void Start()

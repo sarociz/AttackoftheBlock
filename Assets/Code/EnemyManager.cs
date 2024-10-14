@@ -53,7 +53,7 @@ public class EnemyManager : MonoBehaviour
     {
         float velocity = 0.5f;
         float minVelocity = 0.2f;
-        float maxVelocity = 5f;  // Velocidad máxima        
+        float maxVelocity = 6f;  // Velocidad máxima        
 
         // Ajuste de la velocidad en el eje X
         if (Mathf.Abs(rbObstaculo.velocity.x) < minVelocity)
